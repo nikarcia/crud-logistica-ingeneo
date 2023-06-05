@@ -1,0 +1,1179 @@
+{
+	"info": {
+		"_postman_id": "c3a5a7ae-476c-4443-b6a4-41ba078ee385",
+		"name": "ingenio prueba tecnica",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "swagger",
+			"item": [
+				{
+					"name": "/v2/api-docs",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/v2/api-docs",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"v2",
+								"api-docs"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "usuarios",
+			"item": [
+				{
+					"name": "auth/nuevo",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"admin\",\r\n  \"nombreUsuario\": \"admin\",\r\n  \"email\": \"correo@example.com\",\r\n  \"password\": \"admin\",\r\n  \"roles\": [\"admin\"]\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/nuevo",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"nuevo"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "auth/login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombreUsuario\": \"admin\",\r\n  \"password\": \"admin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/auth/login",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"auth",
+								"login"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "cliente",
+			"item": [
+				{
+					"name": "cliente",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4OTc1MSwiZXhwIjoxNjg2MjQ5NzUxfQ.SHaaO9elkaqFaRc7NQS0vJPQfhC8FYJfxl_2pk0R32MuMdKlgUDRkj1_RjwKZTdd5Iacrs1avp-Ausye0eNUQA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"cliente 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/cliente",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cliente/{id}",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"cliente 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/cliente/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cliente",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg5MjE0MCwiZXhwIjoxNjg2MjUyMTQwfQ.P810P4Axob-CAs6sUFW0Yu99xNUxG3B5GigLsCDkX9Vu_wNTQfJ8VVQ0ilQsBPDtfY-WqSZpkv3UOEj1oB9NNA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"nicolas garcia\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/cliente",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cliente"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cliente/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"cliente 1\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/cliente/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cliente",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "cliente/{id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\":\"cliente 2\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/cliente/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tipo_producto",
+			"item": [
+				{
+					"name": "tipo_producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/tipo_producto",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tipo_producto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_producto/cliente/{cliente_id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/tipo_producto/cliente/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tipo_producto",
+								"cliente",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_producto/cliente/{cliente_id}/logistica/{logistica}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/tipo_producto/cliente/1/logistica/TERRESTRE",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tipo_producto",
+								"cliente",
+								"1",
+								"logistica",
+								"TERRESTRE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_producto/cliente/{cliente_id}/logistica/{logistica} Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/tipo_producto/cliente/1/logistica/MARITIMA",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tipo_producto",
+								"cliente",
+								"1",
+								"logistica",
+								"MARITIMA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_producto/cliente/{cliente_id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Nombre del tipo de producto\",\r\n  \"logistica\": \"maritima\",\r\n  \"cliente\": {\r\n    \"id\": 2\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/tipo_producto",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tipo_producto"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_producto/cliente/{cliente_id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"tpt3 maritima\",\r\n  \"logistica\": \"MARITIMA\",\r\n  \"clienteId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/tipo_producto/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tipo_producto",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "tipo_producto/cliente/{cliente_id}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"tpt3 maritima\",\r\n  \"logistica\": \"MARITIMA\",\r\n  \"clienteId\": 1\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/tipo_producto/4",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"tipo_producto",
+								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "lugar_almacenamiento",
+			"item": [
+				{
+					"name": "lugar_almacenamiento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/lugar_almacenamiento/cliente/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"lugar_almacenamiento",
+								"cliente",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lugar_almacenamiento/cliente/{id} Copy",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/lugar_almacenamiento/cliente/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"lugar_almacenamiento",
+								"cliente",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lugar_almacenamiento/cliente/{cliente_id}/logistica/{logistica} Copy",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Nombre del lugar de almacenamiento\",\r\n  \"direccion\": \"Dirección del lugar de almacenamiento\",\r\n  \"logistica\": \"Información logística del lugar de almacenamiento\",\r\n  \"cliente\": {\r\n    \"id\": 2\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/lugar_almacenamiento/cliente/1/logistica/TERRESTRE",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"lugar_almacenamiento",
+								"cliente",
+								"1",
+								"logistica",
+								"TERRESTRE"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lugar_almacenamiento/cliente/{cliente_id}/logistica/{logistica} Copy 2",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"Nombre del lugar de almacenamiento\",\r\n  \"direccion\": \"Dirección del lugar de almacenamiento\",\r\n  \"logistica\": \"Información logística del lugar de almacenamiento\",\r\n  \"cliente\": {\r\n    \"id\": 2\r\n  }\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/lugar_almacenamiento/cliente/2/logistica/MARITIMA",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"lugar_almacenamiento",
+								"cliente",
+								"2",
+								"logistica",
+								"MARITIMA"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lugar_almacenamiento",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"puerto la gloria terrestre 2\",\r\n  \"direccion\": \"A\",\r\n  \"logistica\": \"MARITIMA\",\r\n  \"clienteId\":  1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/lugar_almacenamiento",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"lugar_almacenamiento"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lugar_almacenamiento/id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"actualizado\",\r\n  \"direccion\": \"A\",\r\n  \"logistica\": \"TERRESTRE\",\r\n  \"clienteId\":  1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/lugar_almacenamiento/2",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"lugar_almacenamiento",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "lugar_almacenamiento/id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"nombre\": \"puerto la gloria terrestre 2\",\r\n  \"direccion\": \"A\",\r\n  \"logistica\": \"TERRESTRE\",\r\n  \"clienteId\":  1\r\n}\r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/lugar_almacenamiento/1",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"lugar_almacenamiento",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "planes-entrega-maritima",
+			"item": [
+				{
+					"name": "planes-entrega-maritima",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/planes-entrega-maritima",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"planes-entrega-maritima"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "planes-entrega-terrestre/{numeroGuia}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg5MDA3NiwiZXhwIjoxNjg2MjUwMDc2fQ.NtxmKwD06dbJXiYdzd89wGVNGG2WbvXpOntOOQaXchqWlNsqMzuBrErhLAYlejPJIskOlH7spH-dNjXAe41Xqg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/planes-entrega-terrestre/FBAW5ZI5XX",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"planes-entrega-terrestre",
+								"FBAW5ZI5XX"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "planes-entrega-maritima",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tipoProducto\": 6,\r\n  \"cantidadProducto\": 15,\r\n  \"fechaRegistro\": \"2023-06-04\",\r\n  \"fechaEntrega\": \"2023-06-10\",\r\n  \"puertoEntrega\": 4,\r\n  \"clienteId\": 1,\r\n  \"precioEnvio\": 100000.0,\r\n  \"numeroFlota\": \"ABC1223Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/planes-entrega-maritima",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"planes-entrega-maritima"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "planes-entrega-maritima/{numeroGuia}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tipoProducto\": 6,\r\n  \"cantidadProducto\": 15,\r\n  \"fechaRegistro\": \"2023-06-04\",\r\n  \"fechaEntrega\": \"2023-06-10\",\r\n  \"puertoEntrega\": 4,\r\n  \"clienteId\": 1,\r\n  \"precioEnvio\": 200000.0,\r\n  \"numeroFlota\": \"ABC1223Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/planes-entrega-maritima/80VI61XKYG",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"planes-entrega-maritima",
+								"80VI61XKYG"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "planes-entrega-maritima/{numeroGuia}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tipoProducto\": 6,\r\n  \"cantidadProducto\": 15,\r\n  \"fechaRegistro\": \"2023-06-04\",\r\n  \"fechaEntrega\": \"2023-06-10\",\r\n  \"puertoEntrega\": 4,\r\n  \"clienteId\": 1,\r\n  \"precioEnvio\": 100000.0,\r\n  \"numeroFlota\": \"ABC1223Z\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/planes-entrega-maritima/80VI61XKYG",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"planes-entrega-maritima",
+								"80VI61XKYG"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "planes-entrega-terrestre",
+			"item": [
+				{
+					"name": "planes-entrega-terrestre",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/planes-entrega-terrestre",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"planes-entrega-terrestre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "planes-entrega-terrestre/{numeroGuia}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg5MDA3NiwiZXhwIjoxNjg2MjUwMDc2fQ.NtxmKwD06dbJXiYdzd89wGVNGG2WbvXpOntOOQaXchqWlNsqMzuBrErhLAYlejPJIskOlH7spH-dNjXAe41Xqg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "localhost:8080/api/planes-entrega-terrestre/FBAW5ZI5XX",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"planes-entrega-terrestre",
+								"FBAW5ZI5XX"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "planes-entrega-terrestre",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"tipoProducto\": \"7\",\r\n    \"cantidadProducto\": 15,\r\n    \"fechaRegistro\": \"2023-06-04\",\r\n    \"fechaEntrega\": \"2023-06-04\",\r\n    \"bodegaEntrega\": \"3\",\r\n    \"clienteId\": \"1\",\r\n    \"precioEnvio\": 15000,\r\n    \"placaVehiculo\": \"AAA123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/planes-entrega-terrestre",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"planes-entrega-terrestre"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "planes-entrega-terrestre/{numeroGuia}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tipoProducto\": 5,\r\n  \"cantidadProducto\": 15,\r\n  \"fechaRegistro\": \"2023-06-04\",\r\n  \"fechaEntrega\": \"2023-06-10\",\r\n  \"bodegaEntrega\": 2,\r\n  \"clienteId\": 1,\r\n  \"precioEnvio\": 100000.0,\r\n  \"placaVehiculo\": \"ABC123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/planes-entrega-terrestre/W4SLD44YEW",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"planes-entrega-terrestre",
+								"W4SLD44YEW"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "planes-entrega-terrestre/{numeroGuia}",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiJhZG1pbiIsImlhdCI6MTY4NTg4ODc1NSwiZXhwIjoxNjg2MjQ4NzU1fQ.47zNnmNHsQ7PztWHP7qOd55RWZ4K0WZ0fQFCU2SjJw2dA3dmLtysj0C2RZ2wjAJgIMWQz1biNeItuu9st9jtiQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"tipoProducto\": 5,\r\n  \"cantidadProducto\": 15,\r\n  \"fechaRegistro\": \"2023-06-04\",\r\n  \"fechaEntrega\": \"2023-06-10\",\r\n  \"bodegaEntrega\": 2,\r\n  \"clienteId\": 1,\r\n  \"precioEnvio\": 100000.0,\r\n  \"placaVehiculo\": \"ABC123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/api/planes-entrega-terrestre/W4SLD44YEW",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"planes-entrega-terrestre",
+								"W4SLD44YEW"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
