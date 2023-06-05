@@ -6,11 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="9ac893aa-a615-4d1c-9a76-d3540be13096" name="Default Changelist" comment="se Añadio validacio de rol admin para las operaciones post,put y delete.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/ClienteController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/LogisticaMaritimaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/LogisticaMaritimaController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/LogisticaTerrestreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/LogisticaTerrestreController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/LugarAlmacenamientoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/LugarAlmacenamientoController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/TipoProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/TipoProductoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -233,7 +230,7 @@
       <recent name="com.ingeneo.logistica.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.CrudApplication">
+  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
     <configuration name="CrudApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ingeneo.logistica.CrudApplication" />
       <module name="crud-master" />
@@ -303,11 +300,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.CrudApplication" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
-        <item itemvalue="Docker.my-app: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
+        <item itemvalue="Application.CrudApplication" />
         <item itemvalue="Docker.docker-compose.yml.app: Compose Deployment" />
+        <item itemvalue="Docker.my-app: Compose Deployment" />
       </list>
     </recent_temporary>
   </component>
@@ -372,7 +369,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685955744265</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="se Añadio validacio de rol admin para las operaciones post,put y delete.">
+      <created>1686005670580</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1686005670580</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="ToolWindowManager">
