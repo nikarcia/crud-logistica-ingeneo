@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ac893aa-a615-4d1c-9a76-d3540be13096" name="Default Changelist" comment="with dockercompose and postman collection">
+    <list default="true" id="9ac893aa-a615-4d1c-9a76-d3540be13096" name="Default Changelist" comment="DockerCompose levanta la app de spring boot y la base de datos postgre">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/Dockerfile" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -200,7 +199,7 @@
   "keyToString": {
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/nickog/Desktop/ingeneo prueba tecnica/crud-master/crud-master"
+    "last_opened_file_path": "C:/Users/nickog/Desktop/ingeneo prueba tecnica/my-app/docker-compose.yml"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -230,20 +229,7 @@
       <recent name="com.ingeneo.logistica.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.docker-compose.yml: Compose Deployment">
-    <configuration name="CrudApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.ingeneo.logistica.CrudApplication" />
-      <module name="crud-master" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.ingeneo.logistica.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Docker.my-app: Compose Deployment">
     <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
       <deployment type="dockerfile">
         <settings>
@@ -253,11 +239,15 @@
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
-      <deployment type="docker-compose.yml" />
+      <deployment type="docker-compose.yml">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="dockerfile" temporary="true">
-      <deployment type="dockerfile" />
+      <deployment type="dockerfile">
+        <settings />
+      </deployment>
       <method v="2" />
     </configuration>
     <configuration name="docker-compose.yml: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
@@ -294,13 +284,21 @@
       </deployment>
       <method v="2" />
     </configuration>
+    <configuration name="my-app: Compose Deployment" type="docker-deploy" factoryName="docker-compose.yml" temporary="true" server-name="Docker">
+      <deployment type="docker-compose.yml">
+        <settings>
+          <option name="sourceFilePath" value="../../my-app/docker-compose.yml" />
+        </settings>
+      </deployment>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Docker.my-app: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.app: Compose Deployment" />
         <item itemvalue="Docker.Dockerfile" />
-        <item itemvalue="Application.CrudApplication" />
       </list>
     </recent_temporary>
   </component>
@@ -351,7 +349,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685949836923</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="DockerCompose levanta la app de spring boot y la base de datos postgre">
+      <created>1685954144363</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1685954144363</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -404,7 +409,8 @@
     </ignored-roots>
     <MESSAGE value="first commit" />
     <MESSAGE value="with dockercompose and postman collection" />
-    <option name="LAST_COMMIT_MESSAGE" value="with dockercompose and postman collection" />
+    <MESSAGE value="DockerCompose levanta la app de spring boot y la base de datos postgre" />
+    <option name="LAST_COMMIT_MESSAGE" value="DockerCompose levanta la app de spring boot y la base de datos postgre" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">
