@@ -4,9 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="9ac893aa-a615-4d1c-9a76-d3540be13096" name="Default Changelist" comment="DockerCompose levanta la app de spring boot y la base de datos postgre">
+    <list default="true" id="9ac893aa-a615-4d1c-9a76-d3540be13096" name="Default Changelist" comment="se Añadio validacio de rol admin para las operaciones post,put y delete.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/ClienteController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/ClienteController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/LogisticaMaritimaController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/LogisticaMaritimaController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/LogisticaTerrestreController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/LogisticaTerrestreController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/LugarAlmacenamientoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/LugarAlmacenamientoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/TipoProductoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/ingeneo/logistica/controller/TipoProductoController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,13 +199,13 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "last_opened_file_path": "C:/Users/nickog/Desktop/ingeneo prueba tecnica/my-app/docker-compose.yml"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/nickog/Desktop/ingeneo prueba tecnica/my-app/docker-compose.yml&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CreateClassDialog.RecentsKey">
       <recent name="com.ingeneo.logistica.dto" />
@@ -229,14 +233,19 @@
       <recent name="com.ingeneo.logistica.controller" />
     </key>
   </component>
-  <component name="RunManager" selected="Docker.my-app: Compose Deployment">
-    <configuration name="Dockerfile" type="docker-deploy" factoryName="dockerfile" temporary="true" server-name="Docker">
-      <deployment type="dockerfile">
-        <settings>
-          <option name="sourceFilePath" value="Dockerfile" />
-        </settings>
-      </deployment>
-      <method v="2" />
+  <component name="RunManager" selected="Application.CrudApplication">
+    <configuration name="CrudApplication" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ingeneo.logistica.CrudApplication" />
+      <module name="crud-master" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ingeneo.logistica.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <configuration default="true" type="docker-deploy" factoryName="docker-compose.yml" temporary="true">
       <deployment type="docker-compose.yml">
@@ -294,11 +303,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Docker.my-app: Compose Deployment" />
+        <item itemvalue="Application.CrudApplication" />
         <item itemvalue="Docker.docker-compose.yml: Compose Deployment" />
+        <item itemvalue="Docker.my-app: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.db: Compose Deployment" />
         <item itemvalue="Docker.docker-compose.yml.app: Compose Deployment" />
-        <item itemvalue="Docker.Dockerfile" />
       </list>
     </recent_temporary>
   </component>
@@ -356,7 +365,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685954144363</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="DockerCompose levanta la app de spring boot y la base de datos postgre">
+      <created>1685955744265</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1685955744265</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="ToolWindowManager">
@@ -410,7 +426,8 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="with dockercompose and postman collection" />
     <MESSAGE value="DockerCompose levanta la app de spring boot y la base de datos postgre" />
-    <option name="LAST_COMMIT_MESSAGE" value="DockerCompose levanta la app de spring boot y la base de datos postgre" />
+    <MESSAGE value="se Añadio validacio de rol admin para las operaciones post,put y delete." />
+    <option name="LAST_COMMIT_MESSAGE" value="se Añadio validacio de rol admin para las operaciones post,put y delete." />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/pom.xml">

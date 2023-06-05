@@ -7,6 +7,7 @@ import com.ingeneo.logistica.service.PlanEntregaMaritimaService;
 import com.ingeneo.logistica.service.impl.PlanEntregaMaritimaServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -39,16 +40,19 @@ public class LogisticaMaritimaController {
 	public ResponseEntity<PlanEntregaMaritimaEntity> obtenerPlanEntregaMaritimoPorId(@PathVariable String numeroGuia) throws GeneralException {
 		return planEntregaMaritimaServiceImpl.obtenerPlanEntregaMaritimoPorId(numeroGuia);
 	}
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 
 	@PostMapping
 	public ResponseEntity<PlanEntregaMaritimaEntity> guardarPlanEntregaMaritimo(@Valid @RequestBody PlanEntregaMaritimaRequest planEntregaMaritimoRequest) throws GeneralException {
 		return planEntregaMaritimaServiceImpl.guardarPlanEntregaMaritimo(planEntregaMaritimoRequest);
 	}
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 
 	@PutMapping("/{numeroGuia}")
 	public ResponseEntity<PlanEntregaMaritimaEntity> actualizarPlanEntregaMaritimo(@Valid @RequestBody PlanEntregaMaritimaRequest planEntregaMaritimaRequest, @PathVariable String numeroGuia) throws GeneralException {
 		return planEntregaMaritimaServiceImpl.actualizarPlanEntregaMaritimo(planEntregaMaritimaRequest,numeroGuia);
 	}
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 
 	@DeleteMapping("/{numeroGuia}")
 	public ResponseEntity<PlanEntregaMaritimaEntity> eliminarPlanEntregaMaritimo(@PathVariable String numeroGuia) throws GeneralException {

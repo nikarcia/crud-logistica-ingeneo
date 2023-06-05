@@ -9,6 +9,7 @@ import com.ingeneo.logistica.service.impl.TipoProductoServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -46,14 +47,14 @@ public class TipoProductoController {
 				cliente_id, logistica);
 		return ResponseEntity.ok(tipoProductoEntities);
 	}
-
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PostMapping
 	public ResponseEntity<TipoProductoEntity> guardarTipoProductoEntity(@Valid @RequestBody TipoProductoDto tipoProductoDto) throws GeneralException {
 		TipoProductoEntity tipoProductoEntityGuardado = tipoProductoServiceImpl.guardarTipoProducto(tipoProductoDto);
 
 		return new ResponseEntity<>(tipoProductoEntityGuardado, HttpStatus.CREATED);
 	}
-
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PutMapping("/{id}")
 	public ResponseEntity<TipoProductoEntity> actualizarTipoProductoEntity(@Valid @RequestBody TipoProductoDto tipoProductoDto,
 																		   @PathVariable Integer id) throws GeneralException {
@@ -63,7 +64,7 @@ public class TipoProductoController {
 		}
 		return ResponseEntity.noContent().build();
 	}
-
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> eliminarTipoProductoEntity(@PathVariable Integer id) throws GeneralException {
 		boolean eliminado = tipoProductoServiceImpl.eliminarTipoProducto(id);

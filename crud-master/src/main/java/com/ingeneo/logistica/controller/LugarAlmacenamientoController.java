@@ -8,6 +8,7 @@ import com.ingeneo.logistica.service.LugarAlmacenamientoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -41,19 +42,19 @@ public class LugarAlmacenamientoController {
 		List<LugarAlmacenamientoDto> lugaresAlmacenamientoDto = lugarAlmacenamientoService.getLugaresAlmacenamientoByClienteAndLogistica(cliente_id, logistica);
 		return ResponseEntity.ok(lugaresAlmacenamientoDto);
 	}
-
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PostMapping
 	public ResponseEntity<LugarAlmacenamientoDto> guardarLugarAlmacenamiento(@Valid @RequestBody LugarAlmacenamientoDto lugarAlmacenamientoDto) throws GeneralException {
 		LugarAlmacenamientoDto lugarAlmacenamientoGuardado = lugarAlmacenamientoService.guardarLugarAlmacenamiento(lugarAlmacenamientoDto);
 		return new ResponseEntity<>(lugarAlmacenamientoGuardado, HttpStatus.CREATED);
 	}
-
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PutMapping("/{id}")
 	public ResponseEntity<LugarAlmacenamientoDto> actualizarLugarAlmacenamiento(@Valid @RequestBody LugarAlmacenamientoDto lugarAlmacenamientoDto, @PathVariable Integer id) throws GeneralException {
 		LugarAlmacenamientoDto lugarAlmacenamientoActualizado = lugarAlmacenamientoService.actualizarLugarAlmacenamiento(lugarAlmacenamientoDto, id);
 		return ResponseEntity.ok(lugarAlmacenamientoActualizado);
 	}
-
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> eliminarLugarAlmacenamiento(@PathVariable Integer id) throws GeneralException {
 		lugarAlmacenamientoService.eliminarLugarAlmacenamiento(id);

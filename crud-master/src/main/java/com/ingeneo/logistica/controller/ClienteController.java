@@ -7,6 +7,7 @@ import com.ingeneo.logistica.service.impl.ClienteServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -26,11 +27,13 @@ public class ClienteController {
 		return ResponseEntity.ok(clientes);
 	}
 
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 	@PostMapping
 	public ResponseEntity<Cliente> guardarCliente(@Valid @RequestBody Cliente cliente) throws GeneralException {
 		Cliente clienteGuardado = clienteServiceImpl.guardarCliente(cliente);
 		return new ResponseEntity<>(clienteGuardado,HttpStatus.CREATED);
 	}
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 
 	@PutMapping("/{id}")
 	public ResponseEntity<Cliente> actualizarCliente(@PathVariable Integer id, @Valid @RequestBody Cliente cliente) throws GeneralException {
@@ -40,6 +43,7 @@ public class ClienteController {
 		}
 		return ResponseEntity.noContent().build();
 	}
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 
 	@DeleteMapping("/{id}")
 	public ResponseEntity<Void> eliminarCliente(@PathVariable Integer id) throws GeneralException {

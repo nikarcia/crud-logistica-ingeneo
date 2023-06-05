@@ -7,6 +7,7 @@ import com.ingeneo.logistica.service.PlanEntregaTerrestreService;
 import com.ingeneo.logistica.service.impl.PlanEntregaTerrestreServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
@@ -34,17 +35,20 @@ public class LogisticaTerrestreController {
 																		 @RequestParam(value = "IdCliente", required = false) Integer IdCliente) {
 		return planEntregaTerrestreServiceImpl.searchPlanesEntregaTerrestre(numeroGuia, cantidadProducto, fechaRegistro, fechaEntrega, precioEnvio,precioEnvioConDescuento, placaVehiculo ,tipoproducto,lugarAlmacenamiento,nombreCliente,IdCliente);
 	}
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 
 	@PostMapping
 	public ResponseEntity<PlanEntregaTerrestreEntity> guardarPlanEntregaTerrestre(@Valid @RequestBody PlanEntregaTerrestreRequest planEntregaTerrestreRequest) throws GeneralException {
 		return planEntregaTerrestreServiceImpl.guardarPlanEntregaTerrestre(planEntregaTerrestreRequest);
 	}
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
 
 	@PutMapping("/{numeroGuia}")
 	public ResponseEntity<PlanEntregaTerrestreEntity> actualizarPlanEntregaTerrestre(@Valid @RequestBody PlanEntregaTerrestreRequest planEntregaTerrestre, @PathVariable String numeroGuia) throws GeneralException {
 		return planEntregaTerrestreServiceImpl.actualizarPlanEntregaTerrestre(planEntregaTerrestre,numeroGuia);
 	}
-	
+	@PreAuthorize("hasRole('ROLE_ADMIN')")
+
 	@DeleteMapping("/{numeroGuia}")
 	public ResponseEntity<PlanEntregaTerrestreEntity> eliminarPlanEntregaTerrestre(@PathVariable String numeroGuia) throws GeneralException {
 		return planEntregaTerrestreServiceImpl.eliminarPlanEntregaTerrestre(numeroGuia);
