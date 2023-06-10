@@ -1,0 +1,20 @@
+name: Despliegue de la aplicación
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  despliegue:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repositorio
+        uses: actions/checkout@v2
+
+      - name: Iniciar Docker
+        run: sudo service docker start
+
+      - name: Construir y desplegar la aplicación
+        run: |
+          docker-compose up -d
